@@ -67,3 +67,29 @@ git push -u origin main
 - Never commit `.env` files or API keys.
 - The Gemini key belongs only in the backend `.env`, never in the mobile app.
 - This starter stores data locally on the device. It does not sync across devices.
+
+##Project Objective
+
+The goal of LifeFlow AI is to make everyday planning easier by combining productivity tools and artificial intelligence in one accessible application.
+
+Instead of switching between multiple apps to manage tasks, habits, expenses, and shopping lists, users can organize their everyday activities through a single platform.
+
+#Future Enhancements
+
+-Firebase authentication and cloud synchronization.
+
+-Push notifications and daily reminders.
+
+-Weekly and monthly expense analytics.
+
+-Spending categories and budget management.
+
+-Advanced AI-powered productivity recommendations.
+
+-Calendar integration.
+
+-Personalized dashboards and productivity insights.
+
+##Author
+
+Vaibhavi Jain
