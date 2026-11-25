@@ -1,95 +1,153 @@
 # LifeFlow AI — Everyday Life Organizer
 
-A practical React Native + Expo app for organizing everyday life in one place.
+**Organize your day. Build better habits. Manage your expenses. Live smarter with AI.**
 
-## Features
-- Daily task list with completion tracking
-- Habit tracker with daily check-ins
-- Expense tracker with category totals
-- Grocery list with check-off
-- AI day-planning suggestions through an optional Node/Express + Gemini backend
-- Local-first storage with AsyncStorage; demo mode works without API keys
+LifeFlow AI is a React Native and Expo-based everyday life organizer designed to bring essential productivity tools together in one application. It helps users manage daily tasks, track habits, record expenses, and organize grocery lists, with optional AI-powered daily planning using Google Gemini.
 
-## Tech stack
-- React Native, Expo Router, TypeScript
-- AsyncStorage
-- Node.js, Express
-- Google Gemini API (optional)
+## ✨ Features
 
-## Requirements
-- Node.js 20+
-- Expo Go on Android/iOS, or an emulator
-- Optional: Gemini API key for AI planning
+- **Daily Task Management:** Add tasks, mark them complete, and track daily progress.
+- **Habit Tracker:** Create personal habits and maintain daily check-ins.
+- **Expense Tracker:** Record everyday expenses and monitor total spending.
+- **Grocery Manager:** Create shopping lists and track purchased items.
+- **AI Day Planner:** Generate personalized daily planning suggestions using Google Gemini.
+- **Local Data Storage:** Save tasks, habits, expenses, and grocery items using AsyncStorage.
+- **Demo Mode:** Explore the application without configuring an AI API key.
 
-## Run the mobile app
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React Native | Mobile application development |
+| Expo | Cross-platform development |
+| TypeScript | Type-safe development |
+| Expo Router | Application navigation |
+| AsyncStorage | Local data persistence |
+| Node.js | Backend runtime |
+| Express.js | REST API |
+| Google Gemini API | AI-powered planning |
+
+## 📁 Project Structure
+
+```text
+liflow-ai/
+│
+├── mobile/
+│   ├── app/
+│   │   ├── (tabs)/
+│   │   │   ├── index.tsx
+│   │   │   ├── habits.tsx
+│   │   │   ├── expenses.tsx
+│   │   │   ├── groceries.tsx
+│   │   │   └── _layout.tsx
+│   │   ├── _layout.tsx
+│   │
+│   ├── components/
+│   └── package.json
+│
+├── server/
+│   ├── index.js
+│   ├── package.json
+│   └── .env.example
+│
+├── .gitignore
+├── README.md
+└── CONTRIBUTING.md
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20 or later
+- npm
+- Visual Studio Code
+- Expo Go or an Android/iOS emulator
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/vaibhavij450-tech/liflow-ai.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd liflow-ai
+```
+
+### 3. Install mobile dependencies
+
 ```bash
 cd mobile
 npm install
+```
+
+### 4. Start the application
+
+```bash
 npx expo start
 ```
-Scan the QR code with Expo Go.
 
-## Run the AI backend (optional)
+Scan the QR code using Expo Go or press `w` to launch the web version.
+
+## 🤖 AI Backend Setup
+
+LifeFlow AI uses an optional Node.js and Express backend to connect with Google Gemini.
+
+### 1. Install backend dependencies
+
+Open a second terminal:
+
 ```bash
 cd server
 npm install
+```
+
+### 2. Configure environment variables
+
+Create a `.env` file:
+
+```bash
 cp .env.example .env
 ```
-Add your Gemini key to `server/.env`:
+
+For Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+### 3. Add your Gemini API key
+
+Update `server/.env`:
+
 ```env
 PORT=4000
-GEMINI_API_KEY=your_key_here
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 GEMINI_MODEL=gemini-2.5-flash
 ```
-Then:
+
+Generate an API key through [Google AI Studio](https://aistudio.google.com/apikey).
+
+### 4. Start the backend
+
 ```bash
 npm run dev
 ```
 
-For a physical phone, create `mobile/.env`:
+The backend will be available at:
+
+```text
+http://localhost:4000
+```
+
+### 5. Connect the mobile application
+
+Create `mobile/.env`:
+
 ```env
-EXPO_PUBLIC_API_URL=http://YOUR_COMPUTER_LAN_IP:4000
-```
-Use your computer's LAN IP, ensure phone and computer are on the same Wi-Fi, and restart Expo.
-
-## GitHub upload
-Create an empty GitHub repository, then run from this project root:
-```bash
-git init
-git add .
-git commit -m "Initial commit: LifeFlow AI"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/liflow-ai.git
-git push -u origin main
+EXPO_PUBLIC_API_URL=http://localhost:4000
 ```
 
-## Security
-- Never commit `.env` files or API keys.
-- The Gemini key belongs only in the backend `.env`, never in the mobile app.
-- This starter stores data locally on the device. It does not sync across devices.
-
-##Project Objective
-
-The goal of LifeFlow AI is to make everyday planning easier by combining productivity tools and artificial intelligence in one accessible application.
-
-Instead of switching between multiple apps to manage tasks, habits, expenses, and shopping lists, users can organize their everyday activities through a single platform.
-
-#Future Enhancements
-
--Firebase authentication and cloud synchronization.
-
--Push notifications and daily reminders.
-
--Weekly and monthly expense analytics.
-
--Spending categories and budget management.
-
--Advanced AI-powered productivity recommendations.
-
--Calendar integration.
-
--Personalized dashboards and productivity insights.
-
-##Author
-
-Vaibhavi Jain
+For a physical mobile device, replace `localhost` with your computer's local network
