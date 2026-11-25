@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "LifeFlow AI",
+    "slug": "liflow-ai",
+    "scheme": "liflowai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router",
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
